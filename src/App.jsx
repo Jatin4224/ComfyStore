@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       {
-        index: true,
+        path: "", // Empty string represents the index route
         element: <Landing />,
       },
       {
@@ -61,7 +61,9 @@ const router = createBrowserRouter([
     errorElement: <Error />,
   },
 ]);
+
 const App = () => {
   return <RouterProvider router={router} />;
 };
+
 export default App;
