@@ -1,3 +1,4 @@
+// Make sure to import React if you haven't already
 import { useNavigation } from "react-router-dom";
 
 const SubmitBtn = ({ text }) => {
@@ -17,7 +18,6 @@ const SubmitBtn = ({ text }) => {
       ) : (
         text || "submit"
       )}
-      {text}
     </button>
   );
 };

@@ -13,25 +13,30 @@ const Login = () => {
           type="email"
           label="email"
           name="identifier"
-          defaultValue="test@test" // Corrected the prop name
+          defaultValue="test@test.com"
+        />
+
+        <FormInput
+          type="password"
+          label="password"
+          name="password"
+          defaultValue="secret"
         />
         <div className="mt-4">
-          <SubmitBtn text="login" /> {/* Corrected the component name */}
-          <button type="button" className="btn btn-secondary btn-block">
-            guest user
-          </button>
-          <p className="text-center">
-            Not a member yet?{" "}
-            <Link
-              to="/register"
-              className="ml-2 link link-hover link-primary capitalize"
-            >
-              Register
-            </Link>
-          </p>
+          <SubmitBtn text="login" />
         </div>
-        <FormInput type="password" label="password" defaultValue="secret" />{" "}
-        {/* Corrected the prop name */}
+        <button type="button" className="btn btn-secondary btn-block">
+          guest user
+        </button>
+        <p className="text-center">
+          Not a member yet?
+          <Link
+            to="/register"
+            className="ml-2 link link-hover link-primary capitalize"
+          >
+            Register
+          </Link>
+        </p>
       </Form>
     </section>
   );
