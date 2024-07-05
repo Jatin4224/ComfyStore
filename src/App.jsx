@@ -1,3 +1,44 @@
+// import { RouterProvider, createBrowserRouter } from "react-router-dom";
+// import {
+//   About,
+//   Cart,
+//   Checkout,
+//   Landing,
+//   Login,
+//   Products,
+//   Error,
+//   HomeLayout,
+//   Register,
+//   SingleProduct,
+//   Orders,
+// } from "./pages";
+
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <HomeLayout />,
+//     errorElement: <Error />, // Define the Error element here
+//     children: [
+//       { index: true, element: <Landing /> },
+//       { path: "products", element: <Products /> },
+//       { path: "products/:id", element: <SingleProduct /> },
+//       { path: "cart", element: <Cart /> },
+//       { path: "about", element: <About /> },
+//       { path: "checkout", element: <Checkout /> },
+//       { path: "orders", element: <Orders /> },
+//     ],
+//   },
+//   { path: "/login", element: <Login /> },
+//   { path: "/register", element: <Register /> },
+//   { path: "*", element: <Error /> }, // This catches all unmatched routes
+// ]);
+
+// const App = () => {
+//   return <RouterProvider router={router} />;
+// };
+
+// export default App;
+
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import {
@@ -27,10 +68,12 @@ const router = createBrowserRouter([
       {
         path: "products",
         element: <Products />,
-      },
-      {
-        path: "products/:id",
-        element: <SingleProduct />,
+        children: [
+          {
+            path: ":id",
+            element: <SingleProduct />,
+          },
+        ],
       },
       {
         path: "cart",
